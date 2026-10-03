@@ -37,13 +37,6 @@ const deliveryFocus = [
 ["05","ENABLE","Train users, document processes and support adoption so the solution works beyond go-live."]
 ];
 
-const architecture = [
-["CRM","Customer & sales data","Leads · Accounts · Contacts · Deals · Quotes"],
-["AUTOMATION","Business rules","Workflows · Approvals · Alerts · Deluge"],
-["INTEGRATION","System connectivity","SAP CPI · REST APIs · Zoho apps"],
-["INSIGHTS","Business visibility","Reports · Dashboards · Zoho Analytics · Power BI"]
-];
-
 const spazio=["Zoho CRM implementation & customization","Zoho CRM → SAP CPI integration","Product master integration with SAP","Lead management automation","Store-wise CRM data access","Quotation & discount automation","Opportunity overdue alert system","Client Scripts & Deluge automation","CRM workflow & approval automation"];
 const whor=["Zoho CRM implementation & business process automation","Zoho Creator application development","Zoho Procurement configuration & automation","CRM–Creator data integration","Custom business modules & forms","CRM Client Scripts & Deluge customization","Procurement workflow & approval automation","Custom reports & dashboards","Cross-application Zoho automation","Business process digitization"];
 const stack=["Zoho CRM","Zoho Creator","Zoho Books","Zoho Inventory","Zoho Procurement","Zoho Analytics","Zoho Desk","Zoho Flow","Deluge","JavaScript","HTML","CSS","REST APIs","SAP CPI","Power BI"];
@@ -74,8 +67,6 @@ export default function Home(){
       <div className="deliveryPanel"><div className="deliveryHeader"><div><span className="sectionKicker">SPAZIO INTERIOR · PANCHSHIL GROUP</span><h3>CRM transformation delivery</h3><p>Implementation, integration and automation across the sales and product lifecycle.</p></div><span>09 DELIVERABLES</span></div><div className="deliveryGrid">{spazio.map((x,i)=><div key={x}><strong>{String(i+1).padStart(2,"0")}</strong><span>{x}</span></div>)}</div></div>
       <div className="deliveryPanel whorPanel"><div className="deliveryHeader"><div><span className="sectionKicker">CURRENT ENGAGEMENT</span><h3>WHOR Parking System</h3><p>Connected CRM, Creator and Procurement workflow for operational digitization.</p></div><span>10 DELIVERABLES</span></div><div className="deliveryGrid">{whor.map((x,i)=><div key={x}><strong>{String(i+1).padStart(2,"0")}</strong><span>{x}</span></div>)}</div></div>
     </section>
-
-    <section className="dashboardSection processSection"><div className="sectionToolbar"><div><span className="sectionKicker">03 / HOW I WORK</span><h2>From business problem to working system</h2><p className="sectionIntro">A practical delivery approach designed to keep technology aligned with the people and process using it.</p></div></div><div className="processGrid">{deliveryFocus.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></section>
 
 
     <section id="expertise" className="dashboardSection"><div className="sectionToolbar"><div><span className="sectionKicker">05 / EXPERTISE</span><h2>What I build</h2><p className="sectionIntro">Hands-on delivery across Zoho configuration, custom development, integration and analytics.</p></div><span className="sectionHint">CONFIGURE · CUSTOMIZE · CONNECT</span></div><div className="serviceGrid">{services.map(([n,t,d])=><article className="serviceCard" key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p><b>Explore capability ↗</b></article>)}</div><div className="skillsPanel">{stack.map((x,i)=><div className="skillItem" key={x}><small>{String(i+1).padStart(2,"0")}</small><strong>{x}</strong><span>+</span></div>)}</div><div className="certRow"><div><span>01</span><strong>Zoho Creator</strong><small>Certified</small></div><div><span>02</span><strong>Microsoft Power BI</strong><small>Certification</small></div><div><span>03</span><strong>Cybersecurity by Google</strong><small>Certification</small></div></div></section>
