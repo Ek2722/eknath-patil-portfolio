@@ -2,152 +2,69 @@
 
 import { useState } from "react";
 
-const navItems = [
-  ["Overview", "#home"], ["Experience", "#experience"], ["Projects", "#projects"],
-  ["Skills", "#skills"], ["Contact", "#contact"]
-];
+const navItems = [["Overview","#home"],["Experience","#experience"],["Projects","#projects"],["Expertise","#expertise"],["Education","#education"],["Contact","#contact"]];
 
 const experiences = [
-  {
-    company: "Comprehensive Cloud Technologies Pvt. Ltd.",
-    role: "Software Developer",
-    period: "May 2022 — Present",
-    status: "CURRENT",
-    description: "Designing and delivering Zoho CRM, ERP and business automation solutions from business discovery through implementation, integration, training and support.",
-    tags: ["Zoho CRM", "Creator", "Deluge", "SAP CPI"],
-    impact: "Translating business requirements into maintainable low-code systems and connected workflows."
-  },
-  {
-    company: "WHOR Parking System Pvt. Ltd.",
-    role: "Contract Engagement",
-    period: "Current",
-    status: "ACTIVE",
-    description: "Building a connected automation platform across Zoho CRM, Creator and Procurement with custom modules, forms, workflows, approvals, integrations and operational reporting.",
-    tags: ["CRM", "Creator", "Procurement", "Automation"],
-    impact: "Digitizing business processes across multiple Zoho applications and reducing manual handoffs."
-  },
-  {
-    company: "Spazio Interior · Panchshil Group",
-    role: "CRM & Integration Project",
-    period: "Client Project",
-    status: "DELIVERED",
-    description: "Implemented and customized Zoho CRM with SAP CPI integration, product master synchronization, store-level access, quotation automation and opportunity follow-up controls.",
-    tags: ["Zoho CRM", "SAP CPI", "Product Master"],
-    impact: "Connected CRM and SAP processes while standardizing store operations and sales workflows."
-  },
-  {
-    company: "Fineshift",
-    role: "CRM Implementation & Integration Project",
-    period: "Client Project",
-    status: "DELIVERED",
-    description: "Delivered a Zoho CRM implementation and integrated Zoho CRM with Zoho Books to connect customer, sales and accounting workflows.",
-    tags: ["Zoho CRM", "Zoho Books", "Integration"],
-    impact: "Created a connected CRM-to-books workflow and supported users through implementation and adoption."
-  }
+{company:"Comprehensive Cloud Technologies Pvt. Ltd.",role:"Software Developer",period:"May 2022 — Present",status:"CURRENT",description:"Designing and delivering Zoho CRM, ERP and business automation solutions from business discovery through implementation, integration, training and support.",impact:"Translating business requirements into scalable low-code solutions, automated workflows and connected business systems.",tags:["Zoho CRM","Creator","Deluge","SAP CPI"]},
+{company:"WHOR Parking System Pvt. Ltd.",role:"Contract Engagement",period:"Current",status:"ACTIVE",description:"Building a connected automation platform across Zoho CRM, Creator and Procurement with custom modules, forms, workflows, approvals, integrations and operational reporting.",impact:"Digitizing business processes across multiple Zoho applications and creating a structured flow from data capture to approval and reporting.",tags:["CRM","Creator","Procurement","Automation"]},
+{company:"Spazio Interior · Panchshil Group",role:"CRM & Integration Project",period:"Client Project",status:"DELIVERED",description:"Implemented and customized Zoho CRM with SAP CPI integration, product master synchronization, store-level access, quotation automation and opportunity follow-up controls.",impact:"Connected CRM and SAP processes while standardizing store operations, sales workflows and product data movement.",tags:["Zoho CRM","SAP CPI","Product Master"]},
+{company:"Fineshift",role:"CRM Implementation & Integration Project",period:"Client Project",status:"DELIVERED",description:"Delivered Zoho CRM implementation and Zoho CRM → Zoho Books integration to connect customer management, sales activity and finance operations.",impact:"Established a connected CRM-to-books workflow and supported users through configuration, integration and adoption.",tags:["Zoho CRM","Zoho Books","Integration"]},
+{company:"Catalyst Support Services Pvt. Ltd.",role:"Zoho Business Applications Project",period:"Client Project",status:"DELIVERED",description:"Developed a custom Zoho Creator ERP for end-to-end catering operations and workforce processes, with CRM, Zoho Books and Inventory supporting the wider business ecosystem.",impact:"Digitized operational workflows while bringing customer, workforce, inventory and finance processes into a connected application landscape.",tags:["Creator ERP","CRM","Books","Inventory"]},
+{company:"Rurban India Pvt. Ltd.",role:"Zoho Books & Inventory Project",period:"Client Project",status:"DELIVERED",description:"Configured Zoho Books and Inventory with tailored roles, workflows and industry-specific reporting, including operational dashboards in Zoho Analytics.",impact:"Improved day-to-day visibility through structured workflows, role-based access and business-focused analytics.",tags:["Books","Inventory","Analytics"]}
 ];
 
 const projects = [
-  {
-    number: "01", title: "Spazio CRM Transformation", type: "CRM + SAP INTEGRATION",
-    description: "A connected CRM ecosystem for store operations, SAP product data, quotation processes, lead automation and opportunity follow-up.",
-    metrics: [["09", "Key deliveries"], ["CRM", "Core platform"], ["SAP", "Connected"]]
-  },
-  {
-    number: "02", title: "Catering Operations ERP", type: "ZOHO CREATOR ERP",
-    description: "Custom ERP covering end-to-end catering operations and workforce processes, supported by CRM, Books and Inventory.",
-    metrics: [["ERP", "Custom built"], ["CRM", "Connected"], ["Books", "Integrated"]]
-  },
-  {
-    number: "03", title: "Fineshift CRM + Books", type: "CRM + FINANCE INTEGRATION",
-    description: "CRM implementation connected with Zoho Books to create a more consistent flow between customer management, sales activity and finance operations.",
-    metrics: [["CRM", "Implemented"], ["Books", "Integrated"], ["E2E", "Connected flow"]]
-  }
+{number:"01",title:"Spazio CRM Transformation",type:"CRM + SAP INTEGRATION",description:"End-to-end CRM transformation covering lead management, store-wise access, product master integration, quotation and discount automation, approvals and overdue opportunity controls.",metrics:[["09","Deliverables"],["CRM","Core platform"],["SAP","CPI connected"]]},
+{number:"02",title:"Catering Operations ERP",type:"ZOHO CREATOR ERP",description:"Custom ERP for catering operations and workforce management, supported by CRM, Books and Inventory to connect operational and commercial processes.",metrics:[["ERP","Custom built"],["CRM","Connected"],["3","Zoho apps"]]},
+{number:"03",title:"Fineshift CRM + Books",type:"CRM + FINANCE INTEGRATION",description:"Zoho CRM implementation integrated with Zoho Books to connect customer records and sales processes with downstream finance operations.",metrics:[["CRM","Implemented"],["Books","Integrated"],["E2E","Connected flow"]]},
+{number:"04",title:"Parking Operations Platform",type:"CRM + CREATOR + PROCUREMENT",description:"Multi-application automation environment covering CRM, Creator and Procurement, with custom forms, approvals, integrations, reports and dashboards.",metrics:[["10","Key deliveries"],["3","Zoho apps"],["BI","Reporting"]]}
 ];
 
-const spazio = [
-  "Zoho CRM implementation & customization", "Zoho CRM → SAP CPI integration",
-  "Product master integration with SAP", "Lead management automation",
-  "Store-wise CRM data access", "Quotation & discount automation",
-  "Opportunity overdue alert system", "Client Scripts & Deluge automation",
-  "CRM workflow & approval automation"
+const services = [
+["01","CRM Implementation","Design, configure and customize Zoho CRM around real sales and service processes."],
+["02","Business Automation","Convert repetitive manual steps into workflows, approvals, alerts and automated actions."],
+["03","Zoho Creator Development","Build custom applications, modules, forms and operational tools for specialized business needs."],
+["04","Integration Solutions","Connect Zoho applications, SAP CPI and REST APIs to create reliable data flows."],
+["05","Deluge & Client Scripts","Extend standard Zoho functionality with custom logic, validations and user experiences."],
+["06","Reporting & Analytics","Create practical reports, dashboards and business views for operational decision-making."]
 ];
 
-const whor = [
-  "Zoho CRM implementation & business process automation", "Zoho Creator application development",
-  "Zoho Procurement configuration & automation", "CRM–Creator data integration",
-  "Custom business modules & forms", "CRM Client Scripts & Deluge customization",
-  "Procurement workflow & approval automation", "Custom reports & dashboards",
-  "Cross-application Zoho automation", "Business process digitization"
-];
+const spazio=["Zoho CRM implementation & customization","Zoho CRM → SAP CPI integration","Product master integration with SAP","Lead management automation","Store-wise CRM data access","Quotation & discount automation","Opportunity overdue alert system","Client Scripts & Deluge automation","CRM workflow & approval automation"];
+const whor=["Zoho CRM implementation & business process automation","Zoho Creator application development","Zoho Procurement configuration & automation","CRM–Creator data integration","Custom business modules & forms","CRM Client Scripts & Deluge customization","Procurement workflow & approval automation","Custom reports & dashboards","Cross-application Zoho automation","Business process digitization"];
+const stack=["Zoho CRM","Zoho Creator","Zoho Books","Zoho Inventory","Zoho Procurement","Zoho Analytics","Zoho Desk","Zoho Flow","Deluge","JavaScript","HTML","CSS","REST APIs","SAP CPI","Power BI"];
 
-const stack = [
-  "Zoho CRM", "Zoho Creator", "Zoho Books", "Zoho Inventory", "Zoho Procurement",
-  "Zoho Analytics", "Zoho Desk", "Zoho Flow", "Deluge", "JavaScript",
-  "HTML", "CSS", "REST APIs", "SAP CPI", "Power BI"
-];
+export default function Home(){
+ const [menu,setMenu]=useState(false);
+ return <main className="dashboard">
+  <aside className={menu?"sidebar mobileOpen":"sidebar"}>
+   <a className="brand" href="#home" onClick={()=>setMenu(false)}><span className="brandMark">EP</span><span className="brandText">Eknath Patil<small>ZOHO DEVELOPER</small></span></a>
+   <div className="sideProfile"><div className="avatar">EP</div><div><strong>Software Developer</strong><span>CRM & Automation</span></div><i/></div>
+   <nav className="sideNav"><small className="navCaption">WORKSPACE</small>{navItems.map(([label,href],i)=><a key={label} href={href} onClick={()=>setMenu(false)} className={i===0?"active":""}><span>{["⌂","◫","◆","▦","◎","↗"][i]}</span>{label}</a>)}</nav>
+   <div className="sideBottom"><div className="availability"><i/><div><strong>Available for projects</strong><span>India · IST</span></div></div><a className="sideMail" href="mailto:Patileknath406@gmail.com">Patileknath406@gmail.com</a></div>
+  </aside>
+  {menu&&<button className="mobileBackdrop" onClick={()=>setMenu(false)} aria-label="Close menu"/>}
+  <section className="mainArea">
+   <header className="topbar"><button className="menuBtn" onClick={()=>setMenu(!menu)} aria-label="Toggle navigation">☰</button><div className="crumb"><span>Portfolio</span><b>/</b><strong>Overview</strong></div><div className="topActions"><a href="mailto:Patileknath406@gmail.com">Email me <span>↗</span></a><a href="#contact" className="topContact">Let&apos;s talk</a></div></header>
+   <div className="content">
+    <section id="home" className="welcome panel"><div className="welcomeCopy"><div className="eyebrow"><i/> ZOHO CERTIFIED SOFTWARE DEVELOPER</div><h1>Business systems.<br/><em>Built to work.</em></h1><p>I design CRM, ERP and integration solutions that connect people, processes and data — turning complex business requirements into practical, automated workflows.</p><div className="welcomeActions"><a href="#projects" className="dashBtn primary">Explore my work <span>↗</span></a><a href="#contact" className="dashBtn">Start a conversation</a></div></div><div className="welcomeVisual"><div className="visualGlow"/><div className="miniFlow"><div><span>CRM</span><small>Capture & manage</small></div><b>→</b><div><span>Automation</span><small>Deluge + Flow</small></div><b>→</b><div><span>Integration</span><small>SAP / APIs</small></div></div><div className="visualFooter"><span>DELIVERY FOCUS</span><strong><i/> PROCESS • INTEGRATE • AUTOMATE</strong></div></div></section>
+    <section className="statsRow"><div className="statCard"><span>01</span><strong>3+</strong><small>Years experience</small><em>↗</em></div><div className="statCard"><span>02</span><strong>15+</strong><small>Zoho capabilities</small><em>↗</em></div><div className="statCard"><span>03</span><strong>6</strong><small>Business environments</small><em>↗</em></div><div className="statCard accent"><span>04</span><strong>Zoho</strong><small>Certified developer</small><em>✓</em></div></section>
 
-export default function Home() {
-  const [menu, setMenu] = useState(false);
-  return (
-    <main className="dashboard">
-      <aside className={menu ? "sidebar mobileOpen" : "sidebar"}>
-        <a className="brand" href="#home" onClick={() => setMenu(false)}><span className="brandMark">EP</span><span className="brandText">Eknath Patil<small>ZOHO DEVELOPER</small></span></a>
-        <div className="sideProfile"><div className="avatar">EP</div><div><strong>Software Developer</strong><span>CRM & Automation</span></div><i /></div>
-        <nav className="sideNav"><small className="navCaption">WORKSPACE</small>{navItems.map(([label, href], index) => <a key={label} href={href} onClick={() => setMenu(false)} className={index === 0 ? "active" : ""}><span>{["⌂", "◫", "◆", "▦", "↗"][index]}</span>{label}</a>)}</nav>
-        <div className="sideBottom"><div className="availability"><i /><div><strong>Available for projects</strong><span>India · IST</span></div></div><a className="sideMail" href="mailto:Patileknath406@gmail.com">Patileknath406@gmail.com</a></div>
-      </aside>
-      {menu && <button className="mobileBackdrop" onClick={() => setMenu(false)} aria-label="Close menu" />}
-      <section className="mainArea">
-        <header className="topbar"><button className="menuBtn" onClick={() => setMenu(!menu)} aria-label="Toggle navigation">☰</button><div className="crumb"><span>Portfolio</span><b>/</b><strong>Overview</strong></div><div className="topActions"><a href="mailto:Patileknath406@gmail.com">Email me <span>↗</span></a><a href="#contact" className="topContact">Let&apos;s talk</a></div></header>
+    <section id="experience" className="dashboardSection"><div className="sectionToolbar"><div><span className="sectionKicker">01 / EXPERIENCE</span><h2>Professional journey</h2></div><span className="sectionHint">BUILD · INTEGRATE · AUTOMATE</span></div><div className="experienceList">{experiences.map((x,i)=><article className="experienceItem" key={x.company}><div className="expIndex">{String(i+1).padStart(2,"0")}</div><div className="expMain"><div className="expMeta"><span>{x.period}</span><i>{x.status}</i></div><h3>{x.company}</h3><h4>{x.role}</h4><p>{x.description}</p><div className="impactLine"><b>VALUE</b><span>{x.impact}</span></div><div className="tagList">{x.tags.map(t=><span key={t}>{t}</span>)}</div></div><span className="expArrow">↗</span></article>)}</div></section>
 
-        <div className="content">
-          <section id="home" className="welcome panel">
-            <div className="welcomeCopy">
-              <div className="eyebrow"><i /> ZOHO CERTIFIED SOFTWARE DEVELOPER</div>
-              <h1>CRM systems.<br /><em>Automated.</em></h1>
-              <p>I design business-first CRM, ERP and integration solutions that turn complex processes into connected, measurable and automated workflows.</p>
-              <div className="welcomeActions"><a href="#projects" className="dashBtn primary">View my work <span>↗</span></a><a href="#experience" className="dashBtn">My experience</a></div>
-            </div>
-            <div className="welcomeVisual"><div className="visualGlow" /><div className="miniFlow"><div><span>CRM</span><small>Business data</small></div><b>→</b><div><span>Automation</span><small>Deluge + Flow</small></div><b>→</b><div><span>SAP</span><small>Connected</small></div></div><div className="visualFooter"><span>DELIVERY FOCUS</span><strong><i /> PROCESS • INTEGRATE • AUTOMATE</strong></div></div>
-          </section>
+    <section id="projects" className="dashboardSection"><div className="sectionToolbar"><div><span className="sectionKicker">02 / FEATURED WORK</span><h2>Selected solutions</h2></div><span className="sectionHint">REAL REQUIREMENTS · CONNECTED SYSTEMS</span></div><div className="projectGrid">{projects.map(p=><article className="dashProject" key={p.number}><div className="projectTop"><span>{p.number}</span><small>{p.type}</small></div><h3>{p.title}</h3><p>{p.description}</p><div className="metricStrip">{p.metrics.map(([v,l])=><div key={l}><b>{v}</b><span>{l}</span></div>)}</div></article>)}</div>
+     <div className="deliveryPanel"><div className="deliveryHeader"><div><span className="sectionKicker">SPAZIO INTERIOR · PANCHSHIL GROUP</span><h3>CRM transformation delivery</h3></div><span>09 DELIVERABLES</span></div><div className="deliveryGrid">{spazio.map((x,i)=><div key={x}><strong>{String(i+1).padStart(2,"0")}</strong><span>{x}</span></div>)}</div></div>
+     <div className="deliveryPanel whorPanel"><div className="deliveryHeader"><div><span className="sectionKicker">CURRENT ENGAGEMENT</span><h3>WHOR Parking System</h3></div><span>10 DELIVERABLES</span></div><div className="deliveryGrid">{whor.map((x,i)=><div key={x}><strong>{String(i+1).padStart(2,"0")}</strong><span>{x}</span></div>)}</div></div>
+    </section>
 
-          <section className="statsRow">
-            <div className="statCard"><span>01</span><strong>3+</strong><small>Years experience</small><em>↗</em></div>
-            <div className="statCard"><span>02</span><strong>15+</strong><small>Zoho capabilities</small><em>↗</em></div>
-            <div className="statCard"><span>03</span><strong>4+</strong><small>Industry domains</small><em>↗</em></div>
-            <div className="statCard accent"><span>04</span><strong>Zoho</strong><small>Certified developer</small><em>✓</em></div>
-          </section>
+    <section id="expertise" className="dashboardSection"><div className="sectionToolbar"><div><span className="sectionKicker">03 / WHAT I DO</span><h2>From requirement to working system</h2></div><span className="sectionHint">DISCOVER · DESIGN · DELIVER</span></div><div className="serviceGrid">{services.map(([n,t,d])=><article className="serviceCard" key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div><div className="skillsPanel">{stack.map((x,i)=><div className="skillItem" key={x}><small>{String(i+1).padStart(2,"0")}</small><strong>{x}</strong><span>+</span></div>)}</div><div className="certRow"><div><span>01</span><strong>Zoho Creator</strong><small>Certified</small></div><div><span>02</span><strong>Microsoft Power BI</strong><small>Certification</small></div><div><span>03</span><strong>Cybersecurity by Google</strong><small>Certification</small></div></div></section>
 
-          <section id="experience" className="dashboardSection">
-            <div className="sectionToolbar"><div><span className="sectionKicker">01 / EXPERIENCE</span><h2>Professional journey</h2></div><span className="sectionHint">BUILD · INTEGRATE · AUTOMATE</span></div>
-            <div className="experienceList">{experiences.map((item, index) => <article className="experienceItem" key={item.company}>
-              <div className="expIndex">0{index + 1}</div>
-              <div className="expMain"><div className="expMeta"><span>{item.period}</span><i>{item.status}</i></div><h3>{item.company}</h3><h4>{item.role}</h4><p>{item.description}</p><div className="impactLine"><b>IMPACT</b><span>{item.impact}</span></div><div className="tagList">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div><span className="expArrow">↗</span>
-            </article>)}</div>
-          </section>
+    <section id="education" className="dashboardSection educationSection"><div className="sectionToolbar"><div><span className="sectionKicker">04 / EDUCATION</span><h2>Education & certifications</h2></div><span className="sectionHint">FOUNDATION · CONTINUOUS LEARNING</span></div><div className="educationGrid"><article><span>01</span><div><small>Diploma</small><h3>Electronics & Communication Engineering</h3><p>Jawaharlal Nehru Polytechnic, T. Kushanoor</p></div></article><article><span>02</span><div><small>PUC</small><h3>Pre-University Course</h3><p>Shivaji College, Bhalki</p></div></article><article><span>03</span><div><small>SSLC</small><h3>Secondary School</h3><p>Jyoti High School, T. Kushanoor</p></div></article></div></section>
 
-          <section id="projects" className="dashboardSection">
-            <div className="sectionToolbar"><div><span className="sectionKicker">02 / FEATURED WORK</span><h2>Selected projects</h2></div><span className="sectionHint">BUSINESS PROBLEMS · PRACTICAL SOLUTIONS</span></div>
-            <div className="projectGrid">{projects.map(project => <article className="dashProject" key={project.number}><div className="projectTop"><span>{project.number}</span><small>{project.type}</small></div><h3>{project.title}</h3><p>{project.description}</p><div className="metricStrip">{project.metrics.map(([value, label]) => <div key={label}><b>{value}</b><span>{label}</span></div>)}</div></article>)}</div>
-            <div className="deliveryPanel"><div className="deliveryHeader"><div><span className="sectionKicker">SPAZIO INTERIOR</span><h3>Delivery map</h3></div><span>09 DELIVERABLES</span></div><div className="deliveryGrid">{spazio.map((x, i) => <div key={x}><strong>{String(i + 1).padStart(2, "0")}</strong><span>{x}</span></div>)}</div></div>
-            <div className="deliveryPanel whorPanel"><div className="deliveryHeader"><div><span className="sectionKicker">CURRENT ENGAGEMENT</span><h3>WHOR Parking System</h3></div><span>10 DELIVERABLES</span></div><div className="deliveryGrid">{whor.map((x, i) => <div key={x}><strong>{String(i + 1).padStart(2, "0")}</strong><span>{x}</span></div>)}</div></div>
-          </section>
+    <section className="dashboardSection aboutDash"><div className="sectionToolbar"><div><span className="sectionKicker">05 / PROFILE</span><h2>Business-first technology</h2></div></div><div className="aboutGrid"><p>Zoho Certified Software Developer with 3+ years of experience across catering, supply chain, interior design and parking-infrastructure environments. I work across CRM, ERP, automation, integrations and analytics.</p><p>I focus on understanding the process before writing the solution — mapping requirements, configuring the right Zoho application, automating repetitive work, connecting systems and giving teams a solution they can actually use.</p></div></section>
 
-          <section id="skills" className="dashboardSection">
-            <div className="sectionToolbar"><div><span className="sectionKicker">03 / TECHNICAL TOOLKIT</span><h2>Tools I work with</h2></div><span className="sectionHint">LOW-CODE · APIs · INTEGRATION</span></div>
-            <div className="skillsPanel">{stack.map((item, i) => <div className="skillItem" key={item}><small>{String(i + 1).padStart(2, "0")}</small><strong>{item}</strong><span>+</span></div>)}</div>
-            <div className="certRow"><div><span>01</span><strong>Zoho Creator</strong><small>Certified</small></div><div><span>02</span><strong>Microsoft Power BI</strong><small>Certification</small></div><div><span>03</span><strong>Cybersecurity by Google</strong><small>Certification</small></div></div>
-          </section>
-
-          <section className="dashboardSection aboutDash">
-            <div className="sectionToolbar"><div><span className="sectionKicker">04 / ABOUT</span><h2>Business-first technology</h2></div></div>
-            <div className="aboutGrid"><p>I&apos;m a Zoho Certified Software Developer with 3+ years of experience designing, implementing and integrating CRM and ERP systems across catering, supply chain, interior design and parking-infrastructure environments.</p><p>My strength is connecting people, processes and systems: CRM implementation, data automation, approvals, Client Scripts, Deluge, REST APIs, analytics and SAP CPI integration.</p></div>
-          </section>
-
-          <section id="contact" className="contactDash"><div><span className="sectionKicker">05 / CONTACT</span><h2>Have a process<br /><em>worth automating?</em></h2><p>Let&apos;s discuss CRM, ERP, integrations or a workflow that can be made simpler.</p></div><div className="contactButtons"><a href="mailto:Patileknath406@gmail.com">Patileknath406@gmail.com <span>↗</span></a><a href="tel:+917338255474">+91 73382 55474 <span>↗</span></a></div></section>
-          <footer className="dashFooter"><span>EP<span>.</span> · CRM · AUTOMATION · INTEGRATION</span><small>© {new Date().getFullYear()} Eknath Patil</small></footer>
-        </div>
-      </section>
-    </main>
-  );
+    <section id="contact" className="contactDash"><div><span className="sectionKicker">06 / CONTACT</span><h2>Have a process<br/><em>worth automating?</em></h2><p>CRM implementation, Zoho automation, Creator apps, integrations or business workflow optimization.</p></div><div className="contactButtons"><a href="mailto:Patileknath406@gmail.com">Patileknath406@gmail.com <span>↗</span></a><a href="tel:+917338255474">+91 73382 55474 <span>↗</span></a></div></section>
+    <footer className="dashFooter"><span>EP<span>.</span> · CRM · AUTOMATION · INTEGRATION</span><small>© {new Date().getFullYear()} Eknath Patil</small></footer>
+   </div>
+  </section>
+ </main>;
 }
