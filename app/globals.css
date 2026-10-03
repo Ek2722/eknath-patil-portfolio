@@ -16,3 +16,102 @@ a{color:inherit;text-decoration:none}button{font:inherit}.sidebar{width:258px;mi
 @media(max-width:1150px){.sidebar{width:225px;min-width:225px}.mainArea{margin-left:225px;width:calc(100% - 225px)}.content{width:calc(100% - 38px)}.panel{grid-template-columns:1fr}.welcomeVisual{border-left:0;border-top:1px solid var(--line)}.projectGrid{grid-template-columns:1fr 1fr}.educationGrid{grid-template-columns:1fr 1fr}.educationGrid article:first-child{grid-column:1/-1}.statsRow{grid-template-columns:repeat(2,1fr)}.deliveryGrid{grid-template-columns:1fr 1fr}.deliveryGrid div:nth-child(3n){border-right:1px solid var(--line)}.deliveryGrid div:nth-child(2n){border-right:0}.skillsPanel{grid-template-columns:1fr 1fr}.skillItem:nth-child(3n){border-right:1px solid var(--line)}.skillItem:nth-child(2n){border-right:0}.serviceGrid{grid-template-columns:1fr 1fr}.processGrid{grid-template-columns:repeat(3,1fr)}.architectureFlow{grid-template-columns:1fr 1fr}.architectureFlow article:nth-child(2){border-right:0}.architectureFlow article:nth-child(-n+2){border-bottom:1px solid var(--line)}.archArrow{display:none}.certRow{grid-template-columns:1fr}.aboutGrid{grid-template-columns:1fr}}
 @media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.25s;box-shadow:20px 0 60px rgba(0,0,0,.45)}.sidebar.mobileOpen{transform:translateX(0)}.mobileBackdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.58);border:0;z-index:25}.mainArea{margin-left:0;width:100%}.topbar{padding:0 17px}.menuBtn{display:block}.crumb{display:none}.topActions a:first-child{display:none}.content{width:calc(100% - 28px);padding-top:19px}.welcomeCopy{padding:42px 25px}.welcome h1{font-size:51px;letter-spacing:-3px}.welcomeCopy>p{font-size:12px}.heroTrust{flex-wrap:wrap;line-height:1.8}.welcomeVisual{min-height:340px}.visualFooter{left:17px;right:17px}.labelA{left:7%}.labelB{right:6%}.labelC{left:10%}.sectionToolbar{display:block}.sectionHint{display:block;margin-top:9px}.projectGrid,.serviceGrid{grid-template-columns:1fr}.deliveryGrid,.educationGrid{grid-template-columns:1fr}.educationGrid article:first-child{grid-column:auto}.deliveryGrid div,.deliveryGrid div:nth-child(2n),.deliveryGrid div:nth-child(3n){border-right:0}.processGrid{grid-template-columns:1fr 1fr}.architectureFlow{grid-template-columns:1fr}.architectureFlow article{border-right:0!important;border-bottom:1px solid var(--line)}.architectureFlow article:last-child{border-bottom:0}.contactDash{display:block;padding:33px 25px}.contactButtons{margin-top:25px;min-width:0}.dashFooter{display:block}.dashFooter small{display:block;margin-top:12px}.statsRow{margin-bottom:55px}}
 @media(max-width:480px){.welcome h1{font-size:44px;letter-spacing:-2.5px}.welcomeActions{flex-wrap:wrap}.statsRow{gap:7px}.statCard{min-height:101px;padding:13px}.statCard strong{font-size:23px}.statCard small{font-size:8px}.experienceItem{grid-template-columns:30px 1fr 20px;gap:7px;padding:19px 2px}.expMain h3{font-size:14px}.expMain p{font-size:10px}.impactLine{display:block}.impactLine b{display:block;margin-bottom:4px}.dashProject{min-height:280px}.skillsPanel{grid-template-columns:1fr}.skillItem,.skillItem:nth-child(2n),.skillItem:nth-child(3n){border-right:0}.processGrid{grid-template-columns:1fr}.contactDash h2{font-size:33px}.contactButtons a{font-size:8px;grid-template-columns:40px 1fr 15px}.welcomeVisual{min-height:300px}.core{width:100px;height:100px}.orbitOne{width:260px;height:260px}.orbitTwo{width:330px;height:150px}}
+
+
+/* Premium UI refresh — editorial dashboard system */
+:root{
+  --bg:#070a0f;--sidebar:#0a0e15;--panel:#0d131d;--panel2:#111a26;
+  --text:#f7f9fc;--muted:#8491a2;--soft:#cbd5e1;--line:rgba(255,255,255,.09);
+  --cyan:#63e6d7;--blue:#7ea1ff;--purple:#b894ff;--gold:#f2cf7b;
+}
+body{font-family:Manrope,system-ui,sans-serif;background:#070a0f}
+.dashboard{background:
+ radial-gradient(900px 500px at 78% -5%,rgba(126,161,255,.14),transparent 62%),
+ radial-gradient(700px 450px at 18% 30%,rgba(99,230,215,.06),transparent 65%),#070a0f}
+.sidebar{width:276px;min-width:276px;padding:28px 20px;background:rgba(8,12,18,.88)}
+.mainArea{margin-left:276px;width:calc(100% - 276px)}
+.topbar{height:80px;padding:0 48px;background:rgba(7,10,15,.72)}
+.content{width:min(1320px,calc(100% - 96px));padding:48px 0 80px}
+.panel{min-height:560px;border-radius:24px;grid-template-columns:1.12fr .88fr;background:
+ linear-gradient(135deg,rgba(20,31,46,.98),rgba(9,14,22,.98) 66%);border-color:rgba(255,255,255,.11);box-shadow:0 30px 100px rgba(0,0,0,.42)}
+.welcomeCopy{padding:82px 66px}
+.eyebrow{font-size:10px;letter-spacing:2.2px}
+.welcome h1{font-size:clamp(58px,6vw,94px);line-height:.91;letter-spacing:-5.8px;margin:28px 0 25px}
+.welcomeCopy>p{font-size:15px;line-height:1.9;color:#b9c5d3;max-width:650px}
+.dashBtn{padding:14px 19px;border-radius:10px}
+.welcomeVisual{min-height:560px;background:
+ radial-gradient(circle at 52% 48%,rgba(99,230,215,.17),transparent 35%),
+ radial-gradient(circle at 75% 20%,rgba(126,161,255,.18),transparent 35%)}
+.core{width:136px;height:136px;border-color:rgba(99,230,215,.62);box-shadow:0 0 90px rgba(99,230,215,.16),inset 0 0 40px rgba(99,230,215,.07)}
+.core span{font-size:31px}
+.flowLabel{padding:11px 14px;border-radius:9px;font-size:9px}
+.statsRow{gap:14px;margin:16px 0 92px}
+.statCard{min-height:145px;padding:22px;border-radius:15px;background:linear-gradient(145deg,#101721,#0a0f17)}
+.statCard strong{font-size:38px;margin-top:14px}
+.statCard small{font-size:11px}
+.dashboardSection{padding-bottom:96px}
+.sectionToolbar{margin-bottom:31px}
+.sectionToolbar h2{font-size:40px;letter-spacing:-2px;margin-top:10px}
+.sectionIntro{font-size:12px;line-height:1.8;max-width:760px;color:#8997a8}
+.experienceItem{padding:35px 10px;grid-template-columns:64px 1fr 44px}
+.expMain h3{font-size:22px;margin-top:13px}
+.expMain h4{font-size:11px}
+.expMain p{font-size:12px;line-height:1.85}
+.impactLine{max-width:1000px;padding:11px 0 11px 13px}
+.impactLine span{font-size:11px}
+.tagList span{font-size:8px;padding:6px 9px}
+.projectGrid{grid-template-columns:repeat(2,1fr);gap:14px}
+.dashProject{min-height:335px;padding:28px;border-radius:15px}
+.dashProject h3{font-size:23px;margin-top:42px}
+.dashProject p{font-size:11px;line-height:1.9;max-width:480px}
+.metricStrip{left:28px;right:28px;bottom:23px}
+.deliveryPanel{border-radius:15px;margin-top:16px}
+.deliveryHeader{padding:24px 26px}
+.deliveryHeader h3{font-size:20px}
+.deliveryGrid div{min-height:82px;padding:18px 20px}
+.deliveryGrid span{font-size:10px}
+.serviceGrid{grid-template-columns:repeat(3,1fr);gap:14px}
+.serviceCard{min-height:220px;padding:27px;border-radius:14px}
+.serviceCard h3{font-size:19px;margin-top:28px}
+.serviceCard p{font-size:11px;line-height:1.8}
+.skillsPanel{border-radius:14px}
+.skillItem{padding:18px 20px}
+.skillItem strong{font-size:11px}
+.certRow{gap:14px}
+.certRow>div{padding:20px;border-radius:12px}
+.educationGrid{gap:14px}
+.educationGrid article{min-height:190px;padding:27px;border-radius:14px}
+.educationGrid h3{font-size:17px}
+.educationGrid p{font-size:10px}
+.aboutGrid{gap:14px}
+.aboutGrid>div{padding:32px;border-radius:14px}
+.aboutLead{font-size:18px}
+.aboutGrid p{font-size:12px}
+.contactDash{border-radius:18px;padding:62px;margin-bottom:48px}
+.contactDash h2{font-size:54px}
+.contactDash p{font-size:12px;line-height:1.7}
+.contactButtons{min-width:360px}
+.contactButtons a{padding:16px;border-radius:10px;font-size:10px}
+.dashFooter{padding:30px 0}
+
+@media(max-width:1150px){
+ .sidebar{width:235px;min-width:235px}.mainArea{margin-left:235px;width:calc(100% - 235px)}
+ .content{width:calc(100% - 48px)}
+ .serviceGrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .sidebar{width:270px}.mainArea{margin-left:0;width:100%}.topbar{height:68px;padding:0 16px}
+ .content{width:calc(100% - 24px);padding-top:16px}
+ .panel{border-radius:18px;min-height:auto}.welcomeCopy{padding:42px 25px}.welcome h1{font-size:51px;letter-spacing:-3.5px}
+ .welcomeCopy>p{font-size:12px}.welcomeVisual{min-height:360px}
+ .sectionToolbar h2{font-size:31px}.dashboardSection{padding-bottom:70px}
+ .projectGrid,.serviceGrid{grid-template-columns:1fr}.dashProject{min-height:300px}
+ .statsRow{margin-bottom:65px}.statCard{min-height:115px}.statCard strong{font-size:28px}
+ .contactDash{padding:38px 25px}.contactDash h2{font-size:38px}.contactButtons{min-width:0}
+}
+@media(max-width:480px){
+ .welcome h1{font-size:43px;letter-spacing:-2.7px}.welcomeVisual{min-height:310px}
+ .sectionToolbar h2{font-size:27px}.experienceItem{padding:22px 2px}
+ .dashProject{padding:22px}.dashProject h3{font-size:19px}.metricStrip{left:22px;right:22px}
+ .contactDash h2{font-size:32px}
+}
