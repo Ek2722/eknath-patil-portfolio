@@ -492,3 +492,9 @@ body{background:var(--bg);color:var(--text)}
   .flowLabel{font-size:11px}
   .flowLabel small{font-size:6.5px}
 }
+
+/* Final ecosystem label size +4px */
+.flowLabel{font-size:17px}
+.flowLabel small{font-size:9px}
+@media(max-width:760px){.flowLabel{font-size:16px}.flowLabel small{font-size:8px}}
+@media(max-width:480px){.flowLabel{font-size:15px}.flowLabel small{font-size:7.5px}}
