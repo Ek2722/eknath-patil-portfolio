@@ -585,3 +585,19 @@ body{background:var(--bg);color:var(--text)}
 .visualFooter>strong{font-size:13px!important;font-weight:900!important;letter-spacing:1.2px!important;color:#ffffff!important}
 @media(max-width:760px){.heroTrust{gap:8px}.heroTrust strong{font-size:12px}.heroTrust span{font-size:11px}.heroTrust span+span:before{margin-right:8px}.visualFooter>span{font-size:10px!important}.visualFooter>strong{font-size:10.5px!important}}
 @media(max-width:480px){.heroTrust{gap:6px}.heroTrust strong{font-size:11px}.heroTrust span{font-size:10px}.visualFooter{gap:8px}.visualFooter>span{font-size:9px!important}.visualFooter>strong{font-size:9.5px!important}}
+
+/* LinkedIn visitor connection form */
+.linkedinSource{margin-top:24px;padding:14px 16px;border:1px solid rgba(99,230,215,.18);background:rgba(99,230,215,.04);display:grid;gap:6px;max-width:560px}
+.linkedinSource strong{font-size:10px;letter-spacing:1.4px;color:#63e6d7}
+.linkedinSource span{font-size:10px;line-height:1.55;color:#cbd5e1}
+.contactPanel{display:grid;gap:14px}
+.linkedinLeadForm{width:min(100%,430px);padding:20px;border:1px solid #243244;background:#0d131d;display:grid;gap:12px;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.formTitle{display:grid;gap:4px;margin-bottom:3px}
+.formTitle span{font-size:9px;letter-spacing:1.5px;color:#63e6d7;font-weight:800}
+.formTitle strong{font-size:18px;color:#f8fafc}
+.linkedinLeadForm label{display:grid;gap:6px;font-size:10px;letter-spacing:.6px;color:#cbd5e1;font-weight:700}
+.linkedinLeadForm input,.linkedinLeadForm textarea{width:100%;border:1px solid #26364a;background:#091019;color:#f7f9fc;padding:11px 12px;font:inherit;font-size:11px;outline:none;resize:vertical}
+.linkedinLeadForm input:focus,.linkedinLeadForm textarea:focus{border-color:#63e6d7;box-shadow:0 0 0 2px rgba(99,230,215,.08)}
+.linkedinLeadForm .dashBtn{border:0;cursor:pointer;justify-content:center;width:100%}
+.formNote{font-size:9px;line-height:1.5;color:#94a3b8}
+@media(max-width:760px){.linkedinLeadForm{width:100%;padding:16px}.linkedinSource{margin-top:18px}.contactPanel{margin-top:8px}}
