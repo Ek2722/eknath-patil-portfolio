@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [["Overview","#home"],["Experience","#experience"],["Projects","#projects"],["Expertise","#expertise"],["Education","#education"],["Contact","#contact"]];
 
@@ -35,6 +35,11 @@ const stack=["Zoho CRM","Zoho Creator","Zoho Books","Zoho Inventory","Zoho Procu
 
 export default function Home(){
  const [menu,setMenu]=useState(false);
+ const [linkedinLead,setLinkedinLead]=useState({name:"",profile:"",message:""});
+ const [leadSource,setLeadSource]=useState("linkedin");
+ const [submitted,setSubmitted]=useState(false);
+ useEffect(()=>{const params=new URLSearchParams(window.location.search);setLeadSource(params.get("utm_source")||"linkedin");},[]);
+ const submitLinkedinLead=(e)=>{e.preventDefault();const subject=encodeURIComponent("LinkedIn Portfolio Connection — "+linkedinLead.name);const body=encodeURIComponent("New portfolio connection request\\n\\nName: "+linkedinLead.name+"\\nLinkedIn Profile: "+linkedinLead.profile+"\\nSource: "+leadSource+"\\nMessage: "+linkedinLead.message+"\\n\\nPortfolio: "+window.location.href);window.location.href="mailto:Patileknath406@gmail.com?subject="+subject+"&body="+body;setSubmitted(true);};
  return <main className="dashboard">
   <aside className={menu?"sidebar mobileOpen":"sidebar"}>
    <a className="brand" href="#home" onClick={()=>setMenu(false)}><span className="brandMark">EP</span><span className="brandText">Eknath Patil<small>ZOHO DEVELOPER</small></span></a>
@@ -67,7 +72,7 @@ export default function Home(){
 
     <section className="dashboardSection aboutDash"><div className="sectionToolbar"><div><span className="sectionKicker">05 / PROFILE</span><h2>Business-first Zoho development</h2></div></div><div className="aboutGrid"><div><span className="aboutLead">I turn business requirements into practical Zoho solutions.</span><p>My work spans catering, supply chain, interior design and parking-infrastructure environments, where every implementation has different users, rules, data and operating constraints.</p></div><div><span className="aboutLead">I design for simpler operations.</span><p>Clear ownership, predictable automation, connected applications and reporting that helps teams act faster.</p></div></div></section>
 
-    <section id="contact" className="contactDash"><div><span className="sectionKicker">06 / CONTACT</span><h2>Have a process<br/><em>worth automating?</em></h2><p>CRM implementation, Zoho automation, Creator apps, integrations or business workflow optimization.</p></div><div className="contactButtons"><a href="mailto:Patileknath406@gmail.com"><span>Email</span>Patileknath406@gmail.com <b>↗</b></a><a href="tel:+917338255474"><span>Phone</span>+91 73382 55474 <b>↗</b></a></div></section>
+    <section id="contact" className="contactDash"><div><span className="sectionKicker">06 / CONTACT</span><h2>Have a process<br/><em>worth automating?</em></h2><p>CRM implementation, Zoho automation, Creator apps, integrations or business workflow optimization.</p><div className="linkedinSource"><strong>LINKEDIN TRACKING</strong><span>Use the tracked portfolio link from your LinkedIn profile to measure visits. If you want to identify yourself, share your LinkedIn profile below.</span></div></div><div className="contactPanel"><form className="linkedinLeadForm" onSubmit={submitLinkedinLead}><div className="formTitle"><span>LET&apos;S CONNECT</span><strong>LinkedIn visitor</strong></div><label>Name<input required value={linkedinLead.name} onChange={e=>setLinkedinLead({...linkedinLead,name:e.target.value})} placeholder="Your name"/></label><label>LinkedIn profile URL<input required type="url" value={linkedinLead.profile} onChange={e=>setLinkedinLead({...linkedinLead,profile:e.target.value})} placeholder="https://www.linkedin.com/in/your-name"/></label><label>Message<textarea value={linkedinLead.message} onChange={e=>setLinkedinLead({...linkedinLead,message:e.target.value})} placeholder="How can I help?" rows="3"/></label><input type="hidden" value={leadSource} readOnly/><button type="submit" className="dashBtn primary">Send connection request <span>↗</span></button>{submitted&&<small className="formNote">Your email app will open with the connection details ready to send.</small>}</form><div className="contactButtons"><a href="mailto:Patileknath406@gmail.com"><span>Email</span>Patileknath406@gmail.com <b>↗</b></a><a href="tel:+917338255474"><span>Phone</span>+91 73382 55474 <b>↗</b></a></div></div></section>
     <footer className="dashFooter"><span>EP<span>.</span> · ZOHO DEVELOPER · BUSINESS AUTOMATION</span><small>© {new Date().getFullYear()} Eknath Patil</small></footer>
    </div>
   </section>
