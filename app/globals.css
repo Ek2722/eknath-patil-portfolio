@@ -466,3 +466,29 @@ body{background:var(--bg);color:var(--text)}
   .heroTitle{font-size:35px;letter-spacing:-2px}
   .sectionToolbar h2{font-size:24px}
 }
+
+/* Final hero ecosystem label polish */
+.flowLabel{
+  color:#dbe7ef;
+  font-size:13px;
+  border-color:rgba(99,230,215,.22);
+  background:rgba(8,13,20,.86);
+}
+.flowLabel small{
+  color:#63e6d7;
+  font-size:8px;
+  letter-spacing:1.1px;
+}
+.flowLabel.labelA{color:#63e6d7}
+.flowLabel.labelB{color:#7ea1ff}
+.flowLabel.labelC{color:#f2cf7b}
+.flowLabel.labelD{color:#b894ff}
+.flowLabel.labelE{color:#63e6d7}
+@media(max-width:760px){
+  .flowLabel{font-size:12px}
+  .flowLabel small{font-size:7px}
+}
+@media(max-width:480px){
+  .flowLabel{font-size:11px}
+  .flowLabel small{font-size:6.5px}
+}
