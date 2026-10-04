@@ -162,3 +162,36 @@ body{font-family:Manrope,system-ui,sans-serif;background:#070a0f}
  .serviceGrid{grid-template-columns:1fr}
  .contactDash{padding:34px 23px}
 }
+
+
+/* Premium Dark + Mint — final theme tokens */
+:root{
+  --bg:#070a0f;
+  --sidebar:#0a0e15;
+  --panel:#0d131d;
+  --panel2:#111a26;
+  --text:#f7f9fc;
+  --muted:#94a3b8;
+  --soft:#cbd5e1;
+  --line:#1e293b;
+  --cyan:#63e6d7;
+  --blue:#7ea1ff;
+}
+body{background:var(--bg);color:var(--text)}
+.dashboard{background:
+  radial-gradient(850px 500px at 82% -8%,rgba(126,161,255,.12),transparent 60%),
+  radial-gradient(700px 500px at 12% 35%,rgba(99,230,215,.055),transparent 62%),
+  var(--bg)}
+.panel,.statCard,.dashProject,.serviceCard,.educationGrid article,.aboutGrid>div{
+  background-color:var(--panel);
+  border-color:var(--line);
+}
+.sideNav a:hover,.sideNav a.active{background:rgba(99,230,215,.07)}
+.welcome h1 em,.contactDash h2 em{
+  background:linear-gradient(90deg,#63e6d7,#7ea1ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.welcomeCopy>p,.expMain p,.dashProject p,.serviceCard p,.aboutGrid p{color:#c0cad6}
+.sectionIntro,.sideProfile span,.statCard small{color:var(--muted)}
+.statCard.accent{background:linear-gradient(135deg,rgba(99,230,215,.09),rgba(126,161,255,.07));border-color:rgba(99,230,215,.22)}
+.dashBtn.primary{background:var(--cyan);color:#07120f}
