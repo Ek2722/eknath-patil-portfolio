@@ -115,3 +115,50 @@ body{font-family:Manrope,system-ui,sans-serif;background:#070a0f}
  .dashProject{padding:22px}.dashProject h3{font-size:19px}.metricStrip{left:22px;right:22px}
  .contactDash h2{font-size:32px}
 }
+
+/* Final concise portfolio polish */
+.content{width:min(1240px,calc(100% - 76px));padding-top:38px}
+.panel{min-height:510px;border-radius:22px}
+.welcomeCopy{padding:70px 58px}
+.welcome h1{font-size:clamp(54px,5.5vw,78px);letter-spacing:-4.6px;margin:22px 0 20px}
+.welcomeCopy>p{font-size:13px;line-height:1.75;max-width:590px}
+.welcomeActions{margin-top:24px}
+.heroTrust{margin-top:23px}
+.statsRow{margin:12px 0 65px}
+.statCard{min-height:118px;padding:18px}
+.statCard strong{font-size:31px;margin-top:9px}
+.dashboardSection{padding-bottom:68px}
+.sectionToolbar{margin-bottom:22px}
+.sectionToolbar h2{font-size:34px}
+.experienceItem{padding:25px 7px}
+.expMain h3{font-size:18px}
+.expMain p{font-size:10.5px;line-height:1.7}
+.impactLine{margin-bottom:10px;padding:7px 0 7px 10px}
+.projectGrid{grid-template-columns:repeat(2,1fr);gap:12px}
+.dashProject{min-height:285px;padding:23px}
+.dashProject h3{font-size:20px;margin:28px 0 11px}
+.dashProject p{font-size:10px;line-height:1.7}
+.deliveryHeader{padding:18px 21px}
+.deliveryGrid div{min-height:68px;padding:14px 17px}
+.deliveryGrid span{font-size:9px}
+.serviceGrid{gap:10px}
+.serviceCard{min-height:175px;padding:21px}
+.serviceCard h3{font-size:16px;margin:20px 0 8px}
+.serviceCard p{font-size:9.5px;line-height:1.65}
+.skillsPanel{margin-top:10px}
+.educationGrid article{min-height:155px;padding:21px}
+.aboutGrid>div{padding:24px}
+.contactDash{padding:42px;margin-bottom:30px}
+.contactDash h2{font-size:43px}
+@media(max-width:760px){
+ .content{width:calc(100% - 24px);padding-top:16px}
+ .welcomeCopy{padding:40px 23px}
+ .welcome h1{font-size:48px;letter-spacing:-3px}
+ .statsRow{margin-bottom:52px}
+ .dashboardSection{padding-bottom:58px}
+ .sectionToolbar h2{font-size:29px}
+ .projectGrid{grid-template-columns:1fr}
+ .dashProject{min-height:270px}
+ .serviceGrid{grid-template-columns:1fr}
+ .contactDash{padding:34px 23px}
+}
