@@ -498,3 +498,78 @@ body{background:var(--bg);color:var(--text)}
 .flowLabel small{font-size:9px}
 @media(max-width:760px){.flowLabel{font-size:16px}.flowLabel small{font-size:8px}}
 @media(max-width:480px){.flowLabel{font-size:15px}.flowLabel small{font-size:7.5px}}
+
+
+/* Final hero ecosystem + delivery + stats readability enhancement */
+.heroTrust{
+  margin-top:22px;
+  gap:10px;
+  color:#f1f5f9;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+.heroTrust span{
+  color:#63e6d7;
+  font-weight:800;
+  font-size:11px;
+}
+.heroTrust b{
+  color:#dbe7f0;
+  font-weight:700;
+}
+.heroTrust i{
+  width:4px;
+  height:4px;
+  background:#63e6d7;
+  box-shadow:0 0 8px rgba(99,230,215,.5);
+}
+.visualFooter{
+  font-size:9px;
+  color:#aebccc;
+  letter-spacing:1.2px;
+}
+.visualFooter strong{
+  color:#f0f5f8;
+  font-size:10px;
+  letter-spacing:1.1px;
+  font-weight:700;
+}
+.visualFooter i{background:#63e6d7;box-shadow:0 0 9px rgba(99,230,215,.7)}
+.statCard>span{
+  color:#8fa2b6;
+  font-size:9px;
+  font-weight:600;
+}
+.statCard strong{
+  color:#f5f8fb;
+  font-size:34px;
+  font-weight:800;
+  letter-spacing:-1.4px;
+}
+.statCard small{
+  color:#c4d0dc;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.1px;
+}
+.statCard.accent strong{
+  background:linear-gradient(90deg,#63e6d7,#7ea1ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+@media(max-width:760px){
+  .heroTrust{font-size:9px;gap:7px;line-height:1.8}
+  .heroTrust span{font-size:10px}
+  .visualFooter{font-size:8px}
+  .visualFooter strong{font-size:8.5px}
+  .statCard strong{font-size:29px}
+  .statCard small{font-size:9.5px}
+}
+@media(max-width:480px){
+  .heroTrust{font-size:8px;gap:5px}
+  .heroTrust span{font-size:9px}
+  .statCard strong{font-size:25px}
+  .statCard small{font-size:8.5px}
+}
