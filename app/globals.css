@@ -573,3 +573,15 @@ body{background:var(--bg);color:var(--text)}
   .statCard strong{font-size:25px}
   .statCard small{font-size:8.5px}
 }
+
+
+/* Strong final typography for hero technology line and delivery model */
+.heroTrust{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:24px;color:#f8fafc}
+.heroTrust strong{font-size:14px;font-weight:900;letter-spacing:1.4px;color:#63e6d7;text-shadow:0 0 14px rgba(99,230,215,.25)}
+.heroTrust span{font-size:13px;font-weight:800;letter-spacing:.3px;color:#eef4f8}
+.heroTrust span+span:before{content:"•";color:#63e6d7;margin-right:12px;font-weight:900}
+.visualFooter{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.visualFooter>span{font-size:12px!important;font-weight:800!important;letter-spacing:1.4px!important;color:#d8e2ea!important}
+.visualFooter>strong{font-size:13px!important;font-weight:900!important;letter-spacing:1.2px!important;color:#ffffff!important}
+@media(max-width:760px){.heroTrust{gap:8px}.heroTrust strong{font-size:12px}.heroTrust span{font-size:11px}.heroTrust span+span:before{margin-right:8px}.visualFooter>span{font-size:10px!important}.visualFooter>strong{font-size:10.5px!important}}
+@media(max-width:480px){.heroTrust{gap:6px}.heroTrust strong{font-size:11px}.heroTrust span{font-size:10px}.visualFooter{gap:8px}.visualFooter>span{font-size:9px!important}.visualFooter>strong{font-size:9.5px!important}}
